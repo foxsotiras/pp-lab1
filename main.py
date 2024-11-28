@@ -1,3 +1,6 @@
+import json
+
+
 class NullStr(Exception):
     def __init__(self, data = "string is empty"):
         self.data = data
@@ -90,6 +93,34 @@ class AircraftManager:
             return f"Aircraft with name {name} has been deleted."
         return "Aircraft not found."
 
+    def from_json(self, data: dict):
+        for aircraft in data["aircraft_list"]:
+            name = aircraft["name"]
+            max_speed = aircraft["max_speed"]
+            length = aircraft["length"]
+            width = aircraft["width"]
+            height = aircraft["height"]
+            pilot = aircraft["pilot"]
+            altitude = aircraft["altitude"]
+            self.create(name, max_speed, length, width, height,
+                pilot, altitude)
+
+    def save_to_json(self):
+        to_json = {
+            "aircraft_list": []
+        }
+        for aircraft in self.aircraft_list:
+            to_json["aircraft_list"].append({
+                "name": aircraft.name,
+                "max_speed": aircraft.max_speed,
+                "length": aircraft.length,
+                "width": aircraft.width,
+                "height": aircraft.height,
+                "pilot": aircraft.pilot,
+                "altitude": aircraft.altitude
+            })
+
+        return to_json
 
 class FighterJet(Aircraft):
     weapons_system: str
@@ -157,13 +188,42 @@ class FighterJetManager:
                 fighter_jet.weapons_system = weapons_system
             return fighter_jet
         return None
-    
+
     def delete(self, name: str):
         fighter_jet = self.read_by_name(name)
         if fighter_jet:
             self.fighter_jet_list.remove(fighter_jet)
             return f"Fighter jet with name {name} has been deleted."
         return "Fighter jet not found."
+
+    def from_json(self, data: dict):
+        for fighter_jet in data["fighter_jet_list"]:
+            name = fighter_jet["name"]
+            max_speed = fighter_jet["max_speed"]
+            length = fighter_jet["length"]
+            width = fighter_jet["width"]
+            height = fighter_jet["height"]
+            altitude = fighter_jet["altitude"]
+            weapons_system = fighter_jet["weapons_system"]
+            self.create(name, max_speed, length, width, height,
+                altitude, weapons_system)
+
+    def save_to_json(self):
+        to_json = {
+            "fighter_jet_list": []
+        }
+        for fighter_jet in self.fighter_jet_list:
+            to_json["fighter_jet_list"].append({
+                "name": fighter_jet.name,
+                "max_speed": fighter_jet.max_speed,
+                "length": fighter_jet.length,
+                "width": fighter_jet.width,
+                "height": fighter_jet.height,
+                "altitude": fighter_jet.altitude,
+                "weapons_system": fighter_jet.weapons_system
+            })
+
+        return to_json
 
 
 class CommercialAircraft(Aircraft):
@@ -232,7 +292,7 @@ class CommercialAircraftManager:
                 commercial_aircraft.passengers = passengers
             return commercial_aircraft
         return None
-    
+
     def delete(self, name: str):
         commercial_aircraft = self.read_by_name(name)
         if commercial_aircraft:
@@ -240,6 +300,35 @@ class CommercialAircraftManager:
             return f"Commercial aircraft\
                 with name {name} has been deleted."
         return "Commercial aircraft not found."
+
+    def from_json(self, data: dict):
+        for commercial_aircraft in data["commercial_aircraft_list"]:
+            name = commercial_aircraft["name"]
+            max_speed = commercial_aircraft["max_speed"]
+            length = commercial_aircraft["length"]
+            width = commercial_aircraft["width"]
+            height = commercial_aircraft["height"]
+            altitude = commercial_aircraft["altitude"]
+            passengers = commercial_aircraft["passengers"]
+            self.create(name, max_speed, length, width, height,
+                altitude, passengers)
+
+    def save_to_json(self):
+        to_json = {
+            "commercial_aircraft_list": []
+        }
+        for commercial_aircraft in self.commercial_aircraft_list:
+            to_json["commercial_aircraft_list"].append({
+                "name": commercial_aircraft.name,
+                "max_speed": commercial_aircraft.max_speed,
+                "length": commercial_aircraft.length,
+                "width": commercial_aircraft.width,
+                "height": commercial_aircraft.height,
+                "altitude": commercial_aircraft.altitude,
+                "passengers": commercial_aircraft.passengers
+            })
+
+        return to_json
 
 
 class Helicopter(Aircraft):
@@ -308,13 +397,42 @@ class HelicopterManager:
                 helicopter.rotor_diameter = rotor_diameter
             return helicopter
         return None
-    
+
     def delete(self, name: str):
         helicopter = self.read_by_name(name)
         if helicopter:
             self.helicopter_list.remove(helicopter)
             return f"Helicopter with name {name} has been deleted."
         return "Helicopter not found."
+
+    def from_json(self, data: dict):
+        for helicopter in data["helicopter_list"]:
+            name = helicopter["name"]
+            max_speed = helicopter["max_speed"]
+            length = helicopter["length"]
+            width = helicopter["width"]
+            height = helicopter["height"]
+            altitude = helicopter["altitude"]
+            rotor_diameter = helicopter["rotor_diameter"]
+            self.create(name, max_speed, length, width, height,
+                altitude, rotor_diameter)
+
+    def save_to_json(self):
+        to_json = {
+            "helicopter_list": []
+        }
+        for helicopter in self.helicopter_list:
+            to_json["helicopter_list"].append({
+                "name": helicopter.name,
+                "max_speed": helicopter.max_speed,
+                "length": helicopter.length,
+                "width": helicopter.width,
+                "height": helicopter.height,
+                "altitude": helicopter.altitude,
+                "rotor_diameter": helicopter.rotor_diameter
+            })
+
+        return to_json
 
 
 class Autogyro(Aircraft):
@@ -383,13 +501,42 @@ class AutogyroManager:
                 autogyro.rotor_diameter = rotor_diameter
             return autogyro
         return None
-    
+
     def delete(self, name: str):
         autogyro = self.read_by_name(name)
         if autogyro:
             self.autogyro_list.remove(autogyro)
             return f"Autogyro with name {name} has been deleted."
         return "Autogyro not found."
+
+    def from_json(self, data: dict):
+        for autogyro in data["autogyro_list"]:
+            name = autogyro["name"]
+            max_speed = autogyro["max_speed"]
+            length = autogyro["length"]
+            width = autogyro["width"]
+            height = autogyro["height"]
+            altitude = autogyro["altitude"]
+            rotor_diameter = autogyro["rotor_diameter"]
+            self.create(name, max_speed, length, width, height,
+                altitude, rotor_diameter)
+
+    def save_to_json(self):
+        to_json = {
+            "autogyro_list": []
+        }
+        for autogyro in self.autogyro_list:
+            to_json["autogyro_list"].append({
+                "name": autogyro.name,
+                "max_speed": autogyro.max_speed,
+                "length": autogyro.length,
+                "width": autogyro.width,
+                "height": autogyro.height,
+                "altitude": autogyro.altitude,
+                "rotor_diameter": autogyro.rotor_diameter
+            })
+
+        return to_json
 
 
 class Drone(Aircraft):
@@ -458,13 +605,42 @@ class DroneManager:
                 drone.control_range = control_range
             return drone
         return None
-    
+
     def delete(self, name: str):
         drone = self.read_by_name(name)
         if drone:
             self.drone_list.remove(drone)
             return f"Drone with name {name} has been deleted."
         return "Drone not found."
+
+    def from_json(self, data: dict):
+        for drone in data["drone_list"]:
+            name = drone["name"]
+            max_speed = drone["max_speed"]
+            length = drone["length"]
+            width = drone["width"]
+            height = drone["height"]
+            altitude = drone["altitude"]
+            control_range = drone["control_range"]
+            self.create(name, max_speed, length, width, height,
+                altitude, control_range)
+
+    def save_to_json(self):
+        to_json = {
+            "drone_list": []
+        }
+        for drone in self.drone_list:
+            to_json["drone_list"].append({
+                "name": drone.name,
+                "max_speed": drone.max_speed,
+                "length": drone.length,
+                "width": drone.width,
+                "height": drone.height,
+                "altitude": drone.altitude,
+                "control_range": drone.control_range
+            })
+
+        return to_json
 
 
 class Zeppelin(Aircraft):
@@ -533,13 +709,42 @@ class ZeppelinManager:
                 zeppelin.gas_capacity = gas_capacity
             return zeppelin
         return None
-    
+
     def delete(self, name: str):
         zeppelin = self.read_by_name(name)
         if zeppelin:
             self.zeppelin_list.remove(zeppelin)
             return f"Zeppelin with name {name} has been deleted."
         return "Zeppelin not found."
+
+    def from_json(self, data: dict):
+        for zeppelin in data["zeppelin_list"]:
+            name = zeppelin["name"]
+            max_speed = zeppelin["max_speed"]
+            length = zeppelin["length"]
+            width = zeppelin["width"]
+            height = zeppelin["height"]
+            altitude = zeppelin["altitude"]
+            gas_capacity = zeppelin["gas_capacity"]
+            self.create(name, max_speed, length, width, height,
+                altitude, gas_capacity)
+
+    def save_to_json(self):
+        to_json = {
+            "zeppelin_list": []
+        }
+        for zeppelin in self.zeppelin_list:
+            to_json["zeppelin_list"].append({
+                "name": zeppelin.name,
+                "max_speed": zeppelin.max_speed,
+                "length": zeppelin.length,
+                "width": zeppelin.width,
+                "height": zeppelin.height,
+                "altitude": zeppelin.altitude,
+                "gas_capacity": zeppelin.gas_capacity
+            })
+
+        return to_json
 
 
 class Balloon(Aircraft):
@@ -608,13 +813,42 @@ class BalloonManager:
                 balloon.gas_capacity = gas_capacity
             return balloon
         return None
-    
+
     def delete(self, name: str):
         balloon = self.read_by_name(name)
         if balloon:
             self.balloon_list.remove(balloon)
             return f"Balloon with name {name} has been deleted."
         return "Balloon not found."
+
+    def from_json(self, data: dict):
+        for balloon in data["balloon_list"]:
+            name = balloon["name"]
+            max_speed = balloon["max_speed"]
+            length = balloon["length"]
+            width = balloon["width"]
+            height = balloon["height"]
+            altitude = balloon["altitude"]
+            gas_capacity = balloon["gas_capacity"]
+            self.create(name, max_speed, length, width, height,
+                altitude, gas_capacity)
+
+    def save_to_json(self):
+        to_json = {
+            "balloon_list": []
+        }
+        for balloon in self.balloon_list:
+            to_json["balloon_list"].append({
+                "name": balloon.name,
+                "max_speed": balloon.max_speed,
+                "length": balloon.length,
+                "width": balloon.width,
+                "height": balloon.height,
+                "altitude": balloon.altitude,
+                "gas_capacity": balloon.gas_capacity
+            })
+
+        return to_json
 
 
 class Spacecraft:
@@ -673,13 +907,35 @@ class SpacecraftManager:
                 spacecraft.diameter = diameter
             return spacecraft
         return None
-    
+
     def delete(self, name: str):
         spacecraft = self.read_by_name(name)
         if spacecraft:
             self.spacecraft_list.remove(spacecraft)
             return f"Spacecraft with name {name} has been deleted."
         return "Spacecraft not found."
+
+    def from_json(self, data: dict):
+        for spacecraft in data["spacecraft_list"]:
+            name = spacecraft["name"]
+            max_thrust = spacecraft["max_thrust"]
+            height = spacecraft["height"]
+            diameter = spacecraft["diameter"]
+            self.create(name, max_thrust, height, diameter)
+
+    def save_to_json(self):
+        to_json = {
+            "spacecraft_list": []
+        }
+        for spacecraft in self.spacecraft_list:
+            to_json["spacecraft_list"].append({
+                "name": spacecraft.name,
+                "max_thrust": spacecraft.max_thrust,
+                "height": spacecraft.height,
+                "diameter": spacecraft.diameter
+            })
+
+        return to_json
 
 
 class CargoSpacecraft(Spacecraft):
@@ -738,7 +994,7 @@ class CargoSpacecraftManager:
                 cargo_spacecraft.cargo_weight = cargo_weight
             return cargo_spacecraft
         return None
-    
+
     def delete(self, name: str):
         cargo_spacecraft = self.read_by_name(name)
         if cargo_spacecraft:
@@ -746,6 +1002,31 @@ class CargoSpacecraftManager:
             return f"Cargo spacecraft with name {name}\
                 has been deleted."
         return "Cargo spacecraft not found."
+
+    def from_json(self, data: dict):
+        for cargo_spacecraft in data["cargo_spacecraft_list"]:
+            name = cargo_spacecraft["name"]
+            max_thrust = cargo_spacecraft["max_thrust"]
+            height = cargo_spacecraft["height"]
+            diameter = cargo_spacecraft["diameter"]
+            cargo_weight = cargo_spacecraft["cargo_weight"]
+            self.create(name, max_thrust, height, diameter,
+                cargo_weight)
+
+    def save_to_json(self):
+        to_json = {
+            "cargo_spacecraft_list": []
+        }
+        for cargo_spacecraft in self.cargo_spacecraft_list:
+            to_json["cargo_spacecraft_list"].append({
+                "name": cargo_spacecraft.name,
+                "max_thrust": cargo_spacecraft.max_thrust,
+                "height": cargo_spacecraft.height,
+                "diameter": cargo_spacecraft.diameter,
+                "cargo_weight": cargo_spacecraft.cargo_weight
+            })
+
+        return to_json
 
 
 class CommercialSpacecraft(Spacecraft):
@@ -769,46 +1050,109 @@ class CommercialSpacecraft(Spacecraft):
 
 class CommercialSpacecraftManager:
     def __init__(self):
-        self.cargo_spacecraft_list = []
+        self.commercial_spacecraft_list = []
 
     def create(self, name: str, max_thrust: float,
             height: float, diameter: float, passengers: int):
-        cargo_spacecraft = CommercialSpacecraft(name, max_thrust,
+        commercial_spacecraft = CommercialSpacecraft(name, max_thrust,
             height, diameter, passengers)
-        self.cargo_spacecraft_list.append(cargo_spacecraft)
-        return cargo_spacecraft
+        self.commercial_spacecraft_list.append(commercial_spacecraft)
+        return commercial_spacecraft
 
     def read_all(self):
-        return self.cargo_spacecraft_list
+        return self.commercial_spacecraft_list
 
     def read_by_name(self, name: str):
-        for cargo_spacecraft in self.cargo_spacecraft_list:
-            if cargo_spacecraft.name == name:
-                return cargo_spacecraft
+        for commercial_spacecraft in self.commercial_spacecraft_list:
+            if commercial_spacecraft.name == name:
+                return commercial_spacecraft
         return None
 
     def update(self, name: str = None, max_thrust: float = None,
             height: float = None, diameter: float = None,
             passengers: int = None):
-        cargo_spacecraft = self.read_by_name(name)
-        if cargo_spacecraft:
+        commercial_spacecraft = self.read_by_name(name)
+        if commercial_spacecraft:
             if name is not None:
-                cargo_spacecraft.name = name
+                commercial_spacecraft.name = name
             if max_thrust is not None:
-                cargo_spacecraft.max_thrust = max_thrust
+                commercial_spacecraft.max_thrust = max_thrust
             if height is not None:
-                cargo_spacecraft.height = height
+                commercial_spacecraft.height = height
             if diameter is not None:
-                cargo_spacecraft.diameter = diameter
+                commercial_spacecraft.diameter = diameter
             if passengers is not None:
-                cargo_spacecraft.passengers = passengers
-            return cargo_spacecraft
+                commercial_spacecraft.passengers = passengers
+            return commercial_spacecraft
         return None
-    
+
     def delete(self, name: str):
-        cargo_spacecraft = self.read_by_name(name)
-        if cargo_spacecraft:
-            self.cargo_spacecraft_list.remove(cargo_spacecraft)
+        commercial_spacecraft = self.read_by_name(name)
+        if commercial_spacecraft:
+            self.commercial_spacecraft_list.\
+                remove(commercial_spacecraft)
             return f"Commercial spacecraft with name {name}\
                 has been deleted."
         return "Commercial spacecraft not found."
+
+    def from_json(self, data: dict):
+        for commercial_spacecraft in\
+                data["commercial_spacecraft_list"]:
+            name = commercial_spacecraft["name"]
+            max_thrust = commercial_spacecraft["max_thrust"]
+            height = commercial_spacecraft["height"]
+            diameter = commercial_spacecraft["diameter"]
+            passengers =\
+                commercial_spacecraft["passengers"]
+            self.create(name, max_thrust, height, diameter,
+                passengers)
+
+    def save_to_json(self):
+        to_json = {
+            "commercial_spacecraft_list": []
+        }
+        for commercial_spacecraft in self.commercial_spacecraft_list:
+            to_json["commercial_spacecraft_list"].append({
+                "name": commercial_spacecraft.name,
+                "max_thrust": commercial_spacecraft.max_thrust,
+                "height": commercial_spacecraft.height,
+                "diameter": commercial_spacecraft.diameter,
+                "passengers": commercial_spacecraft.\
+                    passengers
+            })
+
+        return to_json
+
+
+def load_json(file_name: str) -> dict:
+    with open(file_name, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+
+    return data
+
+def write_json(file_name: str, *args: dict):
+    output_dict = {}
+    for item in args:
+        output_dict.update(item)
+    json_obj = json.dumps(output_dict, indent=4)
+    with open(file_name, 'w', encoding='utf-8') as file:
+        file.write(json_obj)
+
+def main():
+    data = load_json("./data/test.json")
+    output_file = "./data/output.json"
+
+    aircraft = AircraftManager()
+    aircraft.from_json(data)
+    commercial_spacecraft = CommercialSpacecraftManager()
+    commercial_spacecraft.from_json(data)
+
+    write_json(output_file, aircraft.save_to_json(),
+        commercial_spacecraft.save_to_json())
+
+try:
+    main()
+except NullStr:
+    pass
+except TypeError:
+    pass

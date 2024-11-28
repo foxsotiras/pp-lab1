@@ -1,0 +1,22 @@
+{
+    "aircraft_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "pilot": true,
+            "altitude": 1000.0
+        }
+    ],
+    "commercial_spacecraft_list": [
+        {
+            "name": "Myagkov",
+            "max_thrust": 1000.0,
+            "height": 128.0,
+            "diameter": 20.0,
+            "passengers": 5
+        }
+    ]
+}
