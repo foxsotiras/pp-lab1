@@ -8,11 +8,29 @@
             "height": 30.0,
             "pilot": true,
             "altitude": 1000.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "pilot": true,
+            "altitude": 1000.0
         }
     ],
     "fighter_jet_list": [
         {
             "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "weapons_system": "20-mm Gun Tusova x4"
+        },
+        {
+            "name": "Ispugalsa",
             "max_speed": 100.0,
             "length": 180.0,
             "width": 70.0,
@@ -30,6 +48,15 @@
             "height": 30.0,
             "altitude": 1000.0,
             "passengers": 5
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "passengers": 5
         }
     ],
     "helicopter_list": [
@@ -41,6 +68,15 @@
             "height": 30.0,
             "altitude": 1000.0,
             "rotor_diameter": 6.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "rotor_diameter": 5.0
         }
     ],
     "autogyro_list": [
@@ -52,6 +88,15 @@
             "height": 30.0,
             "altitude": 1000.0,
             "rotor_diameter": 6.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "rotor_diameter": 5.0
         }
     ],
     "drone_list": [
@@ -63,6 +108,15 @@
             "height": 30.0,
             "altitude": 1000.0,
             "control_range": 6.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "control_range": 5.0
         }
     ],
     "zeppelin_list": [
@@ -74,6 +128,15 @@
             "height": 30.0,
             "altitude": 1000.0,
             "gas_capacity": 6.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "gas_capacity": 5.0
         }
     ],
     "balloon_list": [
@@ -85,6 +148,15 @@
             "height": 30.0,
             "altitude": 1000.0,
             "gas_capacity": 6.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "gas_capacity": 5.0
         }
     ],
     "spacecraft_list": [
@@ -93,6 +165,12 @@
             "max_thrust": 1000.0,
             "height": 128.0,
             "diameter": 20.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_thrust": 100.0,
+            "height": 30.0,
+            "diameter": 1000.0
         }
     ],
     "cargo_spacecraft_list": [
@@ -102,6 +180,13 @@
             "height": 128.0,
             "diameter": 20.0,
             "cargo_weight": 5.0
+        },
+        {
+            "name": "Ispugalsa",
+            "max_thrust": 100.0,
+            "height": 30.0,
+            "diameter": 1000.0,
+            "cargo_weight": 100.0
         }
     ],
     "commercial_spacecraft_list": [
@@ -111,6 +196,13 @@
             "height": 128.0,
             "diameter": 20.0,
             "passengers": 5
+        },
+        {
+            "name": "Ispugalsa",
+            "max_thrust": 100.0,
+            "height": 30.0,
+            "diameter": 1000.0,
+            "passengers": 10
         }
     ]
 }

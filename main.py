@@ -1562,6 +1562,19 @@ def main():
     cargo_spacecraft.from_json(json_data)
     commercial_spacecraft.from_json(json_data)
 
+    # Чтение данных с xml
+    aircraft.from_xml(xml_data)
+    fighter_jet.from_xml(xml_data)
+    commercial_aircraft.from_xml(xml_data)
+    helicopter.from_xml(xml_data)
+    autogyro.from_xml(xml_data)
+    drone.from_xml(xml_data)
+    zeppelin.from_xml(xml_data)
+    balloon.from_xml(xml_data)
+    spacecraft.from_xml(xml_data)
+    cargo_spacecraft.from_xml(xml_data)
+    commercial_spacecraft.from_xml(xml_data)
+
     # Запись в файлы
     write_json("./data/output.json", aircraft.save_to_json(),
         fighter_jet.save_to_json(),
