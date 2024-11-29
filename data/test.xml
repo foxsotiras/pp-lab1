@@ -1,0 +1,13 @@
+<list>
+    <fighter_jet_list>
+        <fighter_jet>
+            <name>Ispugalsa</name>
+            <max_speed>100.0</max_speed>
+            <length>180.0</length>
+            <width>70.0</width>
+            <height>30.0</height>
+            <altitude>1000.0</altitude>
+            <weapons_system>20-mm Gun Tusova x4</weapons_system>
+        </fighter_jet>
+    </fighter_jet_list>
+</list>

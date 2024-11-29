@@ -21,6 +21,89 @@
             "weapons_system": "20-mm Gun Tusova x4"
         }
     ],
+    "commercial_aircraft_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "passengers": 5
+        }
+    ],
+    "helicopter_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "rotor_diameter": 6
+        }
+    ],
+    "autogyro_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "rotor_diameter": 6
+        }
+    ],
+    "drone_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "control_range": 6
+        }
+    ],
+    "zeppelin_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "gas_capacity": 6
+        }
+    ],
+    "balloon_list": [
+        {
+            "name": "Myagkov",
+            "max_speed": 100.0,
+            "length": 180.0,
+            "width": 70.0,
+            "height": 30.0,
+            "altitude": 1000.0,
+            "gas_capacity": 6
+        }
+    ],
+    "spacecraft_list": [
+        {
+            "name": "Myagkov",
+            "max_thrust": 1000.0,
+            "height": 128.0,
+            "diameter": 20.0
+        }
+    ],
+    "cargo_spacecraft_list": [
+        {
+            "name": "Myagkov",
+            "max_thrust": 1000.0,
+            "height": 128.0,
+            "diameter": 20.0,
+            "cargo_weight": 5
+        }
+    ],
     "commercial_spacecraft_list": [
         {
             "name": "Myagkov",
