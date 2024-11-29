@@ -1549,6 +1549,9 @@ def main():
     cargo_spacecraft = CargoSpacecraftManager()
     commercial_spacecraft = CommercialSpacecraftManager()
 
+    # Проверка исключений
+    aircraft.create(123, 123, 13, 123, 12331, 12321, 12323)
+
     # Чтение данных с json
     aircraft.from_json(json_data)
     fighter_jet.from_json(json_data)
